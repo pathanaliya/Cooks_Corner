@@ -4,6 +4,16 @@ const connectToMongoDb = require('./db');
 const express = require("express");
 const cors = require('cors');
 
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || origin.endsWith('.vercel.app') || origin === 'http://localhost:3000') {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+}));
+
 const app = express();
 app.use(cors());
 app.use(express.json());
