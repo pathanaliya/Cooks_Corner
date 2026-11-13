@@ -27,7 +27,7 @@ const Login = (props) => {
 
     // Set timeout to clear the alert and redirect after 3 seconds
     setTimeout(() => {
-      if(type === 'success'){
+      if (type === 'success') {
         navigate("/");
         setAlertMessage({ text: "", type: "" });
       } else {
@@ -76,18 +76,17 @@ const Login = (props) => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-lg w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
         {alertMessage.text && (
-          <div 
-            className={`p-4 mb-4 text-sm rounded-lg ${
-              alertMessage.type === 'success' 
-                ? 'bg-green-100 text-green-700' 
+          <div
+            className={`p-4 mb-4 text-sm rounded-lg ${alertMessage.type === 'success'
+                ? 'bg-green-100 text-green-700'
                 : 'bg-red-100 text-red-700'
-            }`} 
+              }`}
             role="alert"
           >
             {alertMessage.text}
           </div>
         )}
-        
+
         <div className="text-center">
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Welcome Back</h2>
           <p className="mt-2 text-sm text-gray-600">
@@ -97,7 +96,7 @@ const Login = (props) => {
             </Link>
           </p>
         </div>
-        
+
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div className="mb-4">
@@ -119,7 +118,7 @@ const Login = (props) => {
                 We'll never share your email with anyone else.
               </small>
             </div>
-            
+
             <div className="mb-4">
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password
@@ -152,9 +151,9 @@ const Login = (props) => {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-green-600 hover:text-green-500">
+              <button type="button" className="font-medium text-green-600 hover:text-green-500">
                 Forgot your password?
-              </a>
+              </button>
             </div>
           </div>
 
